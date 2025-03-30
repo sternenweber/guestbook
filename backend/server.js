@@ -15,10 +15,10 @@ app.use(express.json());
 // Setup lowdb
 const file = path.join(__dirname, 'db.json');
 const adapter = new JSONFile(file);
-const db = new Low(adapter, { messages: [] }); // Set default data here
+const db = new Low(adapter, { messages: [] }); 
 
 await db.read();
-db.data ||= { messages: [] }; // Defensive default just in case
+db.data ||= { messages: [] }; 
 await db.write();
 
 // Routes
